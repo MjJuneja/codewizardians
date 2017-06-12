@@ -1,0 +1,87 @@
+ans 1)
+function SimpleSymbols(str) { var array1 = str.split(""); var arrayABC =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; var check =function(name, index){ if (typeof().arrayABC.indexOf(name[index]) === "string"){ if(name[index-1] === "+" && name[index+1] === "+"){ return true; } else { return false; }; }; };
+
+return array1.forEach(check) };
+
+earlier in the question arrayABC was defined as an object in a wrong manner without defining keys and values so the syntax error was coming though on defining it as an array we can over come this problem.
+
+ans 2)
+function countdown (num) {
+        for (var i = 0; i <= num; i += 1) {
+            setTimeout(function () {
+                if(i > num){
+                    i = 0;
+                }else{
+                    i += 1;
+                }
+                alert(num - i);
+
+            }, i * 1000);
+        }
+    }
+
+countdown(5);
+
+The alert box gives -1 every time (6 times), because the in-line function which has the alert() statement gets executed only after the loop is completed. By the time the loop is completely executed the value of ‘i’ will be 6. The program continues to execute and loop until the i<=num condition is satisfied. The in-line function which has alert() statement gets executed only after the specified time (i*1000) (that is, 0, 1000, 2000, 3000, 4000, 5000 in milliseconds) for six times with 1 sec delay for each alert box. So, The execution of loop gets'll be executed already before the first trigger of setTimeout().
+
+ans 3)
+
+function foo() {
+var count = 4;
+var table = [count];
+
+/* Build the table. */
+
+while (count-- > 0) {
+
+table.push([]);
+
+}
+
+/* Fill it with numbers. */
+
+for (var count1 = 1; count1 <table.length; count1++) {
+console.log(table[count1]);
+table[count1].push(count1);
+
+}
+console.log(table.length);
+return table;
+
+}
+
+In the code above, because count was not assigned any value at the beginning of the function, it is initially considered as undefined, which is 0 when used as a number. The result is that the array is initially filled with undefined, then zero arrays are pushed onto it. In the final loop, the array doesn’t have any elements to loop over so nothing happens and [undefined] is returned.
+
+
+ans 4)
+
+(function() {
+
+baz = 5;
+
+var bar = 10;
+
+})();
+
+console.log(baz);
+
+console.log(bar);
+
+when we are not using strict mode while coding in java script. using var to define variable will make it local variable. while defining variable without keyword 'var' makes it a global variable resulting in scopw throughout program. so it can be printed on console outside function while bar cariable can'table
+
+
+ans 5)
+
+var lorem = { ipsum : 1};
+
+var output = (function(){
+
+delete lorem.ipsum;
+
+return lorem.ipsum;
+
+})();
+
+console.log(output);
+
+here lorem is an object with ipsum as its key and 1 being value of the key. using stement delete lorem.ipsum ipsum key is removed from the object and since no other element is left its an empty object. firstly the function will return lorem.ipsum which is already removed so we get undefined and output will be undefined as well.
